@@ -1,0 +1,241 @@
+<!Doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="calc.js"></script>
+</head>
+<body>
+</body>
+
+<script>
+
+    
+    document.body.style.backgroundColor = "grey";
+
+    let BG = document.createElement('div');
+    BG.style.width = "280px";
+    BG.style.height = "350px";
+    BG.style.margin = "40px";
+    BG.style.backgroundColor = "lightblue";
+    BG.style.border = "2px";
+    BG.style.borderColor = "grey";
+
+    document.body.appendChild(BG);
+    
+    let viewContent = document.createElement('input');
+    //viewContent.style.padding   = "13px";
+    viewContent.style.width = "64%";
+    viewContent.style.height = "50px";
+    viewContent.style.margin = "15px";
+    viewContent.style.textAlign = "right";
+
+    viewContent.value = " " + total;
+    BG.appendChild(viewContent);
+
+    
+    let deleteBtn = document.createElement('button');
+    deleteBtn.style.height = viewContent.offsetHeight;
+    deleteBtn.style.width = viewContent.offsetHeight;
+    deleteBtn.innerHTML = "C";
+    deleteBtn.id = "deleteButton";
+    BG.appendChild(deleteBtn);
+
+    deleteBtn.addEventListener('click', function(){
+        deleteCalc();
+        viewContent.value = ""+total;
+    })
+
+
+    let btn7 = document.createElement('button');
+    btn7.style.height = viewContent.offsetHeight;
+    btn7.style.width = viewContent.offsetHeight;
+    btn7.style.marginLeft = viewContent.style.margin;
+    btn7.innerHTML = "7";    
+    BG.appendChild(btn7);
+
+    btn7.addEventListener('click', function(){
+        pressed(1*btn7.innerHTML);
+    })
+
+    let btn8 = document.createElement('button');
+    btn8.style.height = viewContent.offsetHeight;
+    btn8.style.width = viewContent.offsetHeight;
+    btn8.style.marginLeft = viewContent.style.margin;
+    btn8.innerHTML = "8";
+    BG.appendChild(btn8);
+
+    btn8.addEventListener('click', function(){
+        pressed(1*btn8.innerHTML);
+    })
+
+    let btn9 = document.createElement('button');
+    btn9.style.height = viewContent.offsetHeight;
+    btn9.style.width = viewContent.offsetHeight;
+    btn9.style.marginLeft = viewContent.style.margin;
+    btn9.innerHTML = "9";
+    BG.appendChild(btn9);
+
+    btn9.addEventListener('click', function(){
+        pressed(1*btn9.innerHTML);
+    })
+    
+    let MulBtn = document.createElement('button');
+    MulBtn.style.height = viewContent.offsetHeight;
+    MulBtn.style.width = viewContent.offsetHeight;
+    MulBtn.style.marginLeft = viewContent.style.margin;
+    MulBtn.innerHTML = "X";
+    BG.appendChild(MulBtn);
+
+    MulBtn.addEventListener('click', function(){
+        mul();
+    })
+
+    let btn4 = document.createElement('button');
+    btn4.style.height = viewContent.offsetHeight;
+    btn4.style.width = viewContent.offsetHeight;
+    btn4.style.marginLeft = viewContent.style.margin;
+    btn4.style.marginTop = "15px";
+    btn4.innerHTML = "4";
+    BG.appendChild(btn4);
+
+    btn4.addEventListener('click', function(){
+        pressed(1*btn4.innerHTML);
+    })
+    
+    let btn5 = document.createElement('button');
+    btn5.style.height = viewContent.offsetHeight;
+    btn5.style.width = viewContent.offsetHeight;
+    btn5.style.marginLeft = viewContent.style.margin;
+    btn5.style.marginTop = "15px";
+    btn5.innerHTML = "5";
+    BG.appendChild(btn5);
+
+    btn5.addEventListener('click', function(){
+        pressed(1*btn5.innerHTML);
+    })
+
+    let btn6 = document.createElement('button');
+    btn6.style.height = viewContent.offsetHeight;
+    btn6.style.width = viewContent.offsetHeight;
+    btn6.style.marginLeft = viewContent.style.margin;
+    btn6.style.marginTop = "15px";
+    btn6.innerHTML = "6";
+    BG.appendChild(btn6);
+
+    btn6.addEventListener('click', function(){
+        pressed(1*btn6.innerHTML);
+    })
+
+    let DivBtn = document.createElement('button');
+    DivBtn.style.height = viewContent.offsetHeight;
+    DivBtn.style.width = viewContent.offsetHeight;
+    DivBtn.style.marginLeft = viewContent.style.margin;
+    DivBtn.style.marginTop = "15px";
+    DivBtn.innerHTML = "/";
+    BG.appendChild(DivBtn);
+
+    DivBtn.addEventListener('click', function(){
+        div();
+    })
+
+    let btn1 = document.createElement('button');
+    btn1.style.height = viewContent.offsetHeight;
+    btn1.style.width = viewContent.offsetHeight;
+    btn1.style.marginLeft = viewContent.style.margin;
+    btn1.style.marginTop = "15px";
+    btn1.innerHTML = "1";
+    BG.appendChild(btn1);
+    
+    btn1.addEventListener('click', function(){
+        pressed(1*btn1.innerHTML);
+    })
+
+    let btn2 = document.createElement('button');
+    btn2.style.height = viewContent.offsetHeight;
+    btn2.style.width = viewContent.offsetHeight;
+    btn2.style.marginLeft = viewContent.style.margin;
+    btn2.style.marginTop = "15px";
+    btn2.innerHTML = "2";
+    BG.appendChild(btn2);
+
+    btn2.addEventListener('click', function(){
+        pressed(1*btn2.innerHTML);
+    })
+
+    let btn3 = document.createElement('button');
+    btn3.style.height = viewContent.offsetHeight;
+    btn3.style.width = viewContent.offsetHeight;
+    btn3.style.marginLeft = viewContent.style.margin;
+    btn3.style.marginTop = "15px";
+    btn3.innerHTML = "3";
+    BG.appendChild(btn3);
+
+    btn3.addEventListener('click', function(){
+        pressed(1*btn3.innerHTML);
+    })
+
+    let SubBtn = document.createElement('button');
+    SubBtn.style.height = viewContent.offsetHeight;
+    SubBtn.style.width = viewContent.offsetHeight;
+    SubBtn.style.marginLeft = viewContent.style.margin;
+    SubBtn.style.marginTop = "15px";
+    SubBtn.innerHTML = "-";
+    BG.appendChild(SubBtn);
+    
+    SubBtn.addEventListener('click', function(){
+        sub();
+    })
+    
+    let DotBtn = document.createElement('button');
+    DotBtn.style.height = viewContent.offsetHeight;
+    DotBtn.style.width = viewContent.offsetHeight;
+    DotBtn.style.marginLeft = viewContent.style.margin;
+    DotBtn.style.marginTop = "15px";
+    DotBtn.innerHTML = ".";
+    BG.appendChild(DotBtn);
+
+    DotBtn.addEventListener('click', function(){
+        pressed(DotBtn.innerHTML);
+    })
+
+    let btn0 = document.createElement('button');
+    btn0.style.height = viewContent.offsetHeight;
+    btn0.style.width = viewContent.offsetHeight;
+    btn0.style.marginLeft = viewContent.style.margin;
+    btn0.style.marginTop = "15px";
+    btn0.innerHTML = "0";
+    BG.appendChild(btn0);
+
+    btn0.addEventListener('click', function(){
+        pressed(1*btn0.innerHTML);
+    })
+
+    
+    let AddBtn = document.createElement('button');
+    AddBtn.style.height = viewContent.offsetHeight;
+    AddBtn.style.width = viewContent.offsetHeight;
+    AddBtn.style.marginLeft = viewContent.style.margin;
+    AddBtn.style.marginTop = "15px";
+    AddBtn.innerHTML = "+";
+    BG.appendChild(AddBtn);
+
+    AddBtn.addEventListener('click', function(){
+        add();
+    })
+
+    let EqBtn = document.createElement('button');
+    EqBtn.style.height = viewContent.offsetHeight;
+    EqBtn.style.width = viewContent.offsetHeight;
+    EqBtn.style.marginLeft = viewContent.style.margin;
+    EqBtn.style.marginTop = "15px";
+    EqBtn.innerHTML = "=";
+    BG.appendChild(EqBtn);
+    //<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    EqBtn.addEventListener('click', function(){
+        eq();
+    })
+</script>
+</html> 
